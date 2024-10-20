@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list-style-type</title>
+</head>
+
+<body>
+
+  <section style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
+    <ul style="grid-column: 1 / 3;" data-ke-list-type="disc">
+      <li>list-style-type</li>
+      <ul class="ul" style="display: grid; grid-template-rows: repeat(20, 1fr); grid-auto-flow: column;" data-ke-list-type="disc">
+        <li>disc</li>
+        <li>circle</li>
+        <li>square</li>
+        <li>decimal</li>
+        <li>cjk-decimal</li>
+        <li>decimal-leading-zero</li>
+        <li>lower-roman</li>
+        <li>upper-roman</li>
+        <li>lower-greek</li>
+        <li>lower-alpha</li>
+        <li>upper-alpha</li>
+        <li>lower-latin</li>
+        <li>upper-latin</li>
+        <li>arabic-indic</li>
+        <li>armenian</li>
+        <li>bengali</li>
+        <li>cambodian</li>
+        <li>cjk-earthly-branch</li>
+        <li>cjk-heavenly-stem</li>
+        <li>cjk-ideographic</li>
+        <li>devanagari</li>
+        <li>ethiopic-numeric</li>
+        <li>georgian</li>
+        <li>gujarati</li>
+        <li>gurmukhi</li>
+        <li>hebrew</li>
+        <li>hiragana</li>
+        <li>hiragana-iroha</li>
+        <li>japanese-formal</li>
+        <li>japanese-informal</li>
+        <li>kannada</li>
+        <li>katakana</li>
+        <li>katakana-iroha</li>
+        <li>khmer</li>
+        <li>korean-hangul-formal</li>
+        <li>korean-hanja-formal</li>
+        <li>korean-hanja-informal</li>
+        <li>lao</li>
+        <li>lower-armenian</li>
+        <li>malayalam</li>
+        <li>mongolian</li>
+        <li>myanmar</li>
+        <li>oriya</li>
+        <li>persian</li>
+        <li>simp-chinese-formal</li>
+        <li>simp-chinese-informal</li>
+        <li>tamil</li>
+        <li>telugu</li>
+        <li>thai</li>
+        <li>tibetan</li>
+        <li>trad-chinese-formal</li>
+        <li>trad-chinese-informal</li>
+        <li>upper-armenian</li>
+        <li>disclosure-open</li>
+        <li>disclosure-closed</li>
+        <li>-moz-ethiopic-halehame</li>
+        <li>-moz-ethiopic-halehame-am</li>
+        <li>ethiopic-halehame-ti-er</li>
+        <li>ethiopic-halehame-ti-et</li>
+        <li>hangul</li>
+        <li>hangul-consonant</li>
+        <li>urdu</li>
+        <li>-moz-ethiopic-halehame-ti-er</li>
+        <li>-moz-ethiopic-halehame-ti-et</li>
+        <li>-moz-hangul</li>
+        <li>-moz-hangul-consonant</li>
+        <li>-moz-urdu</li>
+      </ul>
+    </ul>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+      <ul class="test" style="list-style-type: disc;" data-ke-list-type="disc">
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+      </ul>
+      <div>
+        <h6>&nbsp;</h6>
+        <h6>&nbsp;</h6>
+      </div>
+    </div>
+    <details open>
+      <summary>ref</summary>
+      <ul class="ref" style="list-style-type: disc;" data-ke-list-type="disc">
+        <li><small> <b>list-style-type :</b> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type</a> </small></li>
+        <li><small> <b>Ready-made Counter Styles :</b> <a href="https://www.w3.org/TR/predefined-counter-styles/">https://www.w3.org/TR/predefined-counter-styles/</a> </small></li>
+      </ul>
+    </details>
+  </section>
+
+
+
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    
+  $(`.ul li`).style(`margin:0 20px;`)
+  $(`.ul li`).on("mouseover", function(){
+      $(this).ff();
+      $(`.test`).style(`list-style-type: ${$(this).text()};`)
+      $(`.test`).pf(`div`,`h6`).eq(0).text(`list-style-type: ${$(this).text()};`);
+      $(`.test`).pf(`div`,`h6`).eq(1).text(`style="list-style-type: ${$(this).text()};"`);
+  })
+  
+
+</script>

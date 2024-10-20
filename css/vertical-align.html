@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vertical-align</title>
+    <link rel="stylesheet" href="../resources/uds.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+    <main style="display: flex; justify-content: space-between;">
+        <section style="display: grid; grid-template-columns: 300px 1fr;">
+            <ul class="ul">
+                <li>vertical-align: baseline;</li>
+                <li>vertical-align: sub;</li>
+                <li>vertical-align: super;</li>
+                <li>vertical-align: text-top;</li>
+                <li>vertical-align: text-bottom;</li>
+                <li>vertical-align: middle;</li>
+                <li>vertical-align: top;</li>
+                <li>vertical-align: bottom;</li>
+                <li>vertical-align: 100em;</li>
+                <li>vertical-align: 100px;</li>
+                <li>vertical-align: 100%;</li>
+            </ul>
+        
+            <div style="background-color: #eee;">
+                 <div style="width: 100px; height: 100px; display: inline-block; background-color: black;"></div><span class="test">aaa</span>bbb
+            </div>
+        </section>
+    
+    
+        <ul class="rf">
+            <li>vertical-align</li>
+            <li><a href="https://developer.mozilla.org/ko/docs/Web/CSS/vertical-align">https://developer.mozilla.org/ko/docs/Web/CSS/vertical-align</a></li>
+        </ul>
+    </main>
+
+
+
+
+</body>
+
+</html>
+<style>
+
+
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+    integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+    $(`head`).append(
+        `<style>
+            .test {
+                background-color: red;
+            }
+        </style>`
+    );
+
+</script>
+
+<script>
+
+    $(`.ul li`).mouseover(function () {
+        $(this).ff();
+        $(`.test`).style(`${$(this).text()}`);
+    });
+
+
+
+</script>

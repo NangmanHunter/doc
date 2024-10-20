@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin</title>
+</head>
+
+<body>
+
+    <section style="display: grid; grid-template-columns: 500px 500px;">
+        <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+            <li><nav><span>margin:</span> <span> 0 </span> <span> </span> <span> </span> <span> </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span> </span> <span> </span> <span> </span> <span>;</span></nav></li>
+            <li style="visibility: hidden;">&nbsp;</li>
+            <li><nav><span>margin:</span> <span> 0 </span> <span> 0 </span> <span> </span> <span> </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span> 0 </span> <span> </span> <span> </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span>100px</span> <span> </span> <span> </span> <span>;</span></nav></li>
+            <li style="visibility: hidden;">&nbsp;</li>
+            <li><nav><span>margin:</span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span> </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span> 0 </span> <span> 0 </span> <span> </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span>100px</span> <span> 0 </span> <span> </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span>100px</span> <span>100px</span> <span> </span> <span>;</span></nav></li>
+            <li style="visibility: hidden;">&nbsp;</li>
+            <li><nav><span>margin:</span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span>100px</span> <span> 0 </span> <span> 0 </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span>100px</span> <span>100px</span> <span> 0 </span> <span>;</span></nav></li>
+            <li><nav><span>margin:</span> <span>100px</span> <span>100px</span> <span>100px</span> <span>100px</span> <span>;</span></nav></li>
+        </ul>
+        <div class="div" style="width: 500px; height: 500px;">
+            <section style="display: flex;">
+                <div>&nbsp;</div>
+                <div class="wid">&nbsp;</div>
+                <div>&nbsp;</div>
+            </section>
+            <section style="display: flex;">
+                <div class="hei">&nbsp;</div>
+                <div class="test-text">&nbsp;</div>
+                <div class="hei">&nbsp;</div>
+            </section>
+            <section style="display: flex;">
+                <div>&nbsp;</div>
+                <div class="wid">&nbsp;</div>
+                <div>&nbsp;</div>
+            </section>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); align-items: center; gap: 10px;"><input class="input" type="range" value="0" /> <span class="input-value"></span></div>
+        <div class="div-test" style="width: 500px; height: 500px;">
+            <section style="display: flex;">
+                <div>&nbsp;</div>
+                <div class="wid-test">&nbsp;</div>
+                <div>&nbsp;</div>
+            </section>
+            <section style="display: flex;">
+                <div class="hei-test">&nbsp;</div>
+                <div class="test">&nbsp;</div>
+                <div class="hei-test">&nbsp;</div>
+            </section>
+            <section style="display: flex;">
+                <div>&nbsp;</div>
+                <div class="wid-test">&nbsp;</div>
+                <div>&nbsp;</div>
+            </section>
+        </div>
+        <ul style="list-style-type: disc;" data-ke-list-type="disc">
+            <li><small>margin <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin">https://developer.mozilla.org/en-US/docs/Web/CSS/margin</a></small></li>
+        </ul>
+    </section>
+
+
+</body>
+
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+        
+    $(`head`).append(
+      `<style>
+          *{
+            box-sizing: border-box;
+          }
+  
+  
+          .ul{
+            width: 400px;
+          }
+          .ul li nav{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            justify-items: center;
+          }
+  
+  
+          .div div{
+            background-color: black;
+            width: 100px; 
+            height: 100px;
+            transition-duration: 0.1s;
+          }
+          .div .test-text{
+            width: 100px;
+            height: 100px;
+  
+            background-color: red;
+            transition-duration: 0.1s;
+          }
+  
+  
+  
+          .div-test div{
+            background-color: black;
+            width: 100px; 
+            height: 100px;
+          }
+          .div-test .test{
+            width: 100px;
+            height: 100px;
+  
+            background-color: red;
+          }        
+      </style>`
+    );
+    
+</script>
+<script>
+  
+  
+    $(`.ul li`).mouseover(function(){
+      $(this).ff();
+      $(`.wid`).ff();
+      $(`.hei`).ff();
+  
+      $(`.test-text`).style(`${$(this).text()}`);
+  
+  
+      
+      const width= Number($(`.test-text`)[0].style.marginLeft.replace(`px`,``) )
+      + $(`.test-text`)[0].offsetWidth
+      + Number($(`.test-text`)[0].style.marginRight.replace(`px`,``) )
+  
+      const height= Number($(`.test-text`)[0].style.marginTop.replace(`px`,``) )
+      + $(`.test-text`)[0].offsetHeight
+      + Number($(`.test-text`)[0].style.marginBottom.replace(`px`,``) )
+  
+      $(`.wid`).style(`width: ${width}px;`)
+      $(`.hei`).style(`height: ${height}px;`)
+  
+    })
+  
+  
+    $(`.input`).on(`input`, function(){
+      $(`.input-value`).text(`margin: ${$(this).val()}px`)
+      $(`.test`).style(`margin: ${$(this).val()}px;`);
+  
+  
+      const width= Number($(`.test`)[0].style.marginLeft.replace(`px`,``) )
+      + $(`.test`)[0].offsetWidth
+      + Number($(`.test`)[0].style.marginRight.replace(`px`,``) )
+  
+      const height= Number($(`.test`)[0].style.marginTop.replace(`px`,``) )
+      + $(`.test`)[0].offsetHeight
+      + Number($(`.test`)[0].style.marginBottom.replace(`px`,``) )
+  
+      $(`.wid-test`).style(`width: ${width}px;`)
+      $(`.hei-test`).style(`height: ${height}px;`)
+  
+    })
+  
+  
+</script>

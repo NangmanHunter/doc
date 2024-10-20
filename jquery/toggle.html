@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+</head>
+<body>
+    
+    <section style="display: grid; grid-template-columns: repeat(2,1fr);">
+        <ul style="list-style-type: disc;" >
+            <li>Toggle</li>
+            <ul class="ul" style="list-style-type: disc;" >
+                <li>fadeToggle</li>
+                <li>slideToggle</li>
+                <li>toggle</li>
+                <li>toggleClass</li>
+            </ul>
+        </ul>
+        <ul style="list-style-type: disc;" >
+            <li><small><b>fadeToggle <a href="https://api.jquery.com/fadeToggle/">https://api.jquery.com/fadeToggle/</a></b></small></li>
+            <li><small><b>slideToggle <a href="https://api.jquery.com/slideToggle/">https://api.jquery.com/slideToggle/</a></b></small></li>
+            <li><small><b>toggle <a href="https://api.jquery.com/toggle/">https://api.jquery.com/toggle/</a></b></small></li>
+            <li><small><b>toggleClass <a href="https://api.jquery.com/toggleClass/">https://api.jquery.com/toggleClass/</a></b></small></li>
+        </ul>
+        <nav>
+            <section style="height: 100px;">
+            <div class="class" style="background-color: red; height: 100px;">&nbsp;</div>
+            </section>
+            <h6>&nbsp;</h6>
+        </nav>
+    </section>
+
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+    $(`.ul li`).on("mouseover" ,function(){
+        $(this).ff();
+        const m=$(this).text();
+
+        if(m==`toggleClass`){
+            $(`.class`)[m](m);
+            $(`.class`).pf(`nav`,`h6`).text(`class="${$(`.class`).attr('class')}"` )
+            return;
+        }
+        
+        $(`.class`)[m]();
+
+
+
+    })
+
+
+
+</script>

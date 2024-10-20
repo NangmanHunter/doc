@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overflow</title>
+
+</head>
+
+<body>
+
+  <main style="display: flex; justify-content: space-between;">
+
+    <section style="display: grid; grid-template-columns: 200px 490px; ">
+  
+      <ul class="ul">
+        <li>overflow: visible;</li>
+        <li>overflow: hidden;</li>
+        <li>overflow: clip;</li>
+        <li>overflow: scroll;</li>
+        <li>overflow: auto;</li>
+      </ul>
+    
+      <div class="div" contenteditable="true">
+        aaaaaaaaaaaa<br>
+        aaaaaaaaaaaa<br>
+        bbbbbbbbbb<br>
+        bbbbbbbbbb<br>
+        ccccccccccccc<br>
+        ccccccccccccc<br>
+      </div>
+    </section>
+  
+  
+    <ul style="display: grid; grid-template-columns: 150px 450px;">
+      <li>vertical-align</li>
+      <li style="list-style-type: '🔥';"><a href="https://developer.mozilla.org/ko/docs/Web/CSS/vertical-align">https://developer.mozilla.org/ko/docs/Web/CSS/vertical-align</a></li>
+    </ul>
+
+  </main>
+
+
+
+
+</body>
+
+</html>
+
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+  $(`head`).append(
+    `<style>
+        .div {
+          background-color: red;
+          width: 100px;
+          height: 100px;
+        }
+    </style>`
+  );
+
+</script>
+
+<script>
+
+  $(`.ul li`).mouseover(function(){
+    $(this).ff();
+    $(`.div`).style($(this).text());
+  })
+
+</script>

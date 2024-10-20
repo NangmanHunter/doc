@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>hover-combinator</title>
+
+
+</head>
+<body>
+
+
+    
+    
+<main class="fb">
+
+    <section style="display: grid; grid-template-columns: 200px 1fr;">
+    
+        <ul class="mt-none">
+            <li>:hover <span class="red">+</span></li>
+            <li>:hover <span class="red">~</span></li>
+            <li>:hover <span class="red">></span></li>
+            <li>:hover <span class="red-bac">&nbsp;&nbsp;</span></li>
+            <li>:hover<span class="red">::before</span></li>
+            <li>:hover<span class="red">::after</span></li>
+        </ul>
+        
+        <ul class="ht-none">
+            <li>
+                <div class="nxt">
+                    <div class="hover-nxt test"></div>
+                    <div class="other"></div>
+                    <div class="other"></div>
+                </div>
+            </li>
+            <li>
+                <div class="sub">
+                    <div class="hover-sub test"></div>
+                    <div class="other"></div>
+                    <div class="other"></div>
+                </div>
+    
+            </li>
+            <li class="chd">
+                <div class="hover-chd fe test">
+                    <div class="fe test">
+                        <div class="test"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="des">
+                <div class="hover-des fe test">
+                    <div class="fe test">
+                        <div class="test"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="before">
+                <div class="hover-before fc test">■</div>
+            </li>
+            <li class="after">
+                <div class="hover-after fc test">■</div>
+            </li>
+        </ul>
+    
+    </section>
+    
+    <ul class="rf">
+        <li>hover</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">https://developer.mozilla.org/en-US/docs/Web/CSS/:hover</a></li>
+        <li>selector</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors</a></li>
+        <li>Next-sibling combinator(+)</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator">https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator</a></li>
+        <li>Child combinator(>)</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator">https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator</a></li>
+        <li>Subsequent sibling combinator(~)</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator">https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator</a></li>
+        <li>Descendant combinator(" ")</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator">https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator</a></li>
+    
+    </ul>
+</main>
+
+
+
+
+</body>
+
+</html>
+<style>
+
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<link   rel="stylesheet" href="../resources/uds.css"        ></link>
+<script                  src ="../resources/udf-minified.js"></script>
+<script                  src ="../resources/udc.js"         ></script>
+<script>
+
+    $(`head`).append(
+        `<style>
+            .red    {color: red;}
+            .red-bac{background-color: red;}
+            .fe     {display: flex; justify-content: end; align-items: end;}
+
+            .mt-none li{
+                background-color: white;
+                font-weight: bold;
+            }
+            .ht-none{
+                list-style-type: none;
+            }
+
+            .nxt,.sub{display: flex;}
+
+            .test {width: 100px; height: 100px; background-color: black; color:white; transition-duration: 1s;}
+            .other{width: 100px; height: 100px; background-color: #eee;                 transition-duration: 1s;}
+
+            .hover-chd        { width: 300px; height: 300px;                                               }
+            .hover-chd>div    { width: 200px; height: 200px; background-color: rgba(255, 255, 255, 0.5); }
+            .hover-chd>div>div{                              background-color: rgba(255, 255, 255, 1);   }
+
+            .hover-des        { width: 300px; height: 300px;                                               }
+            .hover-des>div    { width: 200px; height: 200px; background-color: rgba(255, 255, 255, 0.5); }
+            .hover-des>div>div{                              background-color: rgba(255, 255, 255, 1);   }
+
+
+
+            .hover-nxt:hover+div{ background-color: red;}
+            .hover-sub:hover~div{ background-color: red;}
+            .hover-chd:hover>div{ background-color: red;}
+            .hover-des:hover div{ background-color: red;}
+
+
+            .hover-before:hover::before {content: "■■■"; color:red;}
+            .hover-after:hover::after   {content: "■■■"; color: red;}
+
+        </style>`
+    );
+
+</script>
+
+<script>
+
+
+
+
+
+
+</script>

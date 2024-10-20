@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gap🤫column-gap🥰row-gap</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../resources/uds.css"></link>
+    <script src="../resources/udf-minified.js"></script>
+
+
+</head>
+
+<body>
+
+    <main style="display: flex;">
+
+        <ul class="mt">
+            <li>gap</li>
+            <li>column-gap</li>
+            <li>row-gap</li>
+        </ul>
+    
+        <ul class="ht">
+            <li>
+                <main class="fb">
+                    <section style="display: grid; grid-template-columns: 240px 1fr;">
+                
+                        <ul class="ul">
+                            <li>gap: 0;</li>
+                            <li>gap: 100px;</li>
+                            <li style="visibility: hidden;">&nbsp;</li>
+                            <li>gap: 0 0;</li>
+                            <li>gap: 100px 0;</li>
+                            <li>gap: 100px 100px;</li>
+                        </ul>
+                    
+                        <div class="test"> 
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </section>
+            
+                    <ul class="rf">
+                        <li>gap</li>
+                        <li><a href="https://developer.mozilla.org/ko/docs/Web/CSS/gap">https://developer.mozilla.org/ko/docs/Web/CSS/gap</a></li>
+                    </ul>
+                </main>
+            </li>
+            <li>
+                <main class="fb">
+                    <section style="display: grid; grid-template-columns: 240px 1fr;">
+                
+                        <ul class="ul">
+                            <li>column-gap: 0;</li>
+                            <li>column-gap: 10%;</li>
+                            <li>column-gap: 10cm;</li>
+                            <li>column-gap: 10ch;</li>
+                            <li>column-gap: 10em;</li>
+                            <li>column-gap: 10in;</li>
+                            <li>column-gap: 10mm;</li>
+                            <li>column-gap: 10pc;</li>
+                            <li>column-gap: 10pt;</li>
+                            <li>column-gap: 10px;</li>
+                            <li>column-gap: 10rem;</li>
+                            <li>column-gap: 10vh;</li>
+                            <li>column-gap: 10vmax;</li>
+                            <li>column-gap: 10vmin;</li>
+                            <li>column-gap: 10vw;</li>
+                        </ul>
+                    
+                        <div class="test"> 
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </section>
+            
+                    <ul class="rf">
+                        <li>column-gap</li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap">https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap</a></li>
+                    </ul>
+                </main>
+            </li>
+            <li>
+                <main class="fb">
+                    <section style="display: grid; grid-template-columns: repeat(2, 1fr);">
+                
+                        <ul class="ul">
+                            <li>row-gap: 0;</li>
+                            <li>row-gap: 10%;</li>
+                            <li>row-gap: 10cm;</li>
+                            <li>row-gap: 10ch;</li>
+                            <li>row-gap: 10em;</li>
+                            <li>row-gap: 10in;</li>
+                            <li>row-gap: 10mm;</li>
+                            <li>row-gap: 10pc;</li>
+                            <li>row-gap: 10pt;</li>
+                            <li>row-gap: 10px;</li>
+                            <li>row-gap: 10rem;</li>
+                            <li>row-gap: 10vh;</li>
+                            <li>row-gap: 10vmax;</li>
+                            <li>row-gap: 10vmin;</li>
+                            <li>row-gap: 10vw;</li>
+                        </ul>
+                    
+                        <div class="test"> 
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </section>
+            
+                    <ul class="rf">
+                        <li>row-gap</li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap">https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap</a></li>
+                    </ul>
+                </main>
+            </li>
+        </ul>
+
+    </main>
+
+
+
+
+</body>
+
+
+</html>
+
+<script src="../resources/udc.js"></script>
+
+<script class="gap-script" type="a">
+    $(`.ul li`).mouseover(function () {
+        $(this).ff();
+        $(`.test`).style(`${$(this).text()}`);
+    });
+</script>
+<script class="column-gap-script" type="a">
+    $(`.ul li`).mouseover(function () {
+        $(this).ff();
+        $(`.test`).style(`${$(this).text()}`);
+    });
+</script>
+<script class="row-gap-script" type="a">
+    $(`.ul li`).mouseover(function () {
+        $(this).ff();
+        $(`.test`).style(`${$(this).text()}`);
+    });
+</script>
+
+
+<script>
+    $(`head`).append(`
+        <style class="gap-style" media="a">
+            .test{
+                display: grid;
+                grid-template-columns: repeat(3, 100px);
+                align-content: start;
+                
+                transition-duration: 1s;
+            }
+            .test div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+        <style class="column-gap-style" media="a">
+            .test{
+                display: grid;
+                grid-template-columns: repeat(3, 100px);
+                align-content: start;
+                
+                transition-duration: 1s;
+            }
+            .test div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+        <style class="row-gap-style" media="a">
+            .test{
+                display: grid;
+                grid-template-columns: repeat(3, 100px);
+                align-content: start;
+                
+                transition-duration: 1s;
+            }
+            .test div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+    `);
+
+    $(`head`).append(`<style  class="target-style" >${$(`.gap-style`).text()}</style>`);
+    $(`body`).append(`<script class="target-script">${$(`.gap-script`).text()}<\/script>`);
+
+    for(let i=0; i<$(`.mt>li`).length; i++){
+        $(`.mt>li`).eq(i).mouseover(function(){
+            
+            $(`title`).text(`${String.fromCodePoint(0x1F618+i)}${$(this).text()}${String.fromCodePoint(0x1F680+i)}`);
+            $(`.target-script`).text("");
+            $(`.target-script`).text("");
+ 
+            $(`head`).append(`<style  class="target-style" >${$(`.${$(this).text()}-style` ).text()}</style>`  );
+            $(`body`).append(`<script class="target-script">${$(`.${$(this).text()}-script`).text()}<\/script>`);
+
+        })
+    }
+
+</script>

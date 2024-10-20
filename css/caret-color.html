@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>caret-color</title>
+
+</head>
+
+<body>
+
+  <main style="display: flex; justify-content: space-between;">
+
+    <section class="section" style="display: grid; grid-template-columns: repeat(3, 1fr);">
+      <ul class="ul">
+        <li>caret-color: auto;</li>
+        <li>caret-color: transparent;</li>
+        <li>caret-color: currentcolor;</li>
+        <li>caret-color: red;</li>
+      </ul>
+        
+      <ul>
+        <li><input type="text"></li>
+        <li><input type="password"></li>
+        <li><input type="search"></li>
+        <li><input type="number"></li>
+        <li><input type="email"></li>
+        <li><input type="tel"></li>
+        <li><input type="url"></li>
+        <li><textarea>&nbsp;</textarea></li>
+        <li><div contenteditable="true"></div></li>
+      </ul>
+    
+      <ul>
+        <li>&lt;input type="text"&gt;</li>
+        <li>&lt;input type="password"&gt;</li>
+        <li>&lt;input type="search"&gt;</li>
+        <li>&lt;input type="number"&gt;</li>
+        <li>&lt;input type="email"&gt;</li>
+        <li>&lt;input type="tel"&gt;</li>
+        <li>&lt;input type="url"&gt;</li>
+        <li>&lt;textarea&gt;&lt;/textarea&gt;</li>
+        <li>&lt;div contenteditable="true"&gt;&lt;/div&gt;</li>
+      </ul>
+      
+    </section>
+  
+  
+    <section style="display: flex; justify-content: space-between;">
+      <ul>
+        <li>Caret</li>
+        <li>caret-color</li>
+        
+      </ul>
+  
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Caret">https://developer.mozilla.org/en-US/docs/Glossary/Caret</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/caret-color">https://developer.mozilla.org/en-US/docs/Web/CSS/caret-color</a></li>
+      </ul>
+  
+    </section>
+
+  </main>
+
+
+
+
+</body>
+</html>
+
+<style>
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+  $(`head`).append(
+    `<style>
+      .section textarea{
+        vertical-align: top;
+      }
+      
+      .section li{
+        height: 35px;
+      }
+    </style>`
+  );
+
+</script>
+
+<script>
+  $(`.ul li`).mouseover(function(){
+    $(this).ff();
+    $(`.section input, .section textarea, .section div[contenteditable="true"]`).style($(this).text())
+  })
+
+
+</script>

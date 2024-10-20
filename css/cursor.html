@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor</title>
+</head>
+
+<body>
+
+  <ul style="list-style-type: disc;" data-ke-list-type="disc">
+    <li>cursor</li>
+    <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+      <li>auto</li>
+      <li>default</li>
+      <li>none</li>
+      <li>context-menu</li>
+      <li>help</li>
+      <li>pointer</li>
+      <li>progress</li>
+      <li>wait</li>
+      <li>cell</li>
+      <li>crosshair</li>
+      <li>text</li>
+      <li>vertical-text</li>
+      <li>alias</li>
+      <li>copy</li>
+      <li>move</li>
+      <li>no-drop</li>
+      <li>not-allowed</li>
+      <li>grab</li>
+      <li>grabbing</li>
+      <li>all-scroll</li>
+      <li>col-resize</li>
+      <li>row-resize</li>
+      <li>n-resize</li>
+      <li>e-resize</li>
+      <li>s-resize</li>
+      <li>w-resize</li>
+      <li>ne-resize</li>
+      <li>nw-resize</li>
+      <li>se-resize</li>
+      <li>sw-resize</li>
+      <li>ew-resize</li>
+      <li>ns-resize</li>
+      <li>nesw-resize</li>
+      <li>nwse-resize</li>
+      <li>zoom-in</li>
+      <li>zoom-out</li>
+    </ul>
+  </ul>
+  <p data-ke-size="size16">&nbsp;</p>
+  <section style="display: flex; flex-direction: column; align-items: center;">
+    <h6><span>Cusor Css, MDN</span> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor">https://developer.mozilla.org/en-US/docs/Web/CSS/cursor</a></h6>
+  </section>
+
+
+
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+  $.fn.extend({ addStyle : function(a){ return this.attr("style", (this.attr("style")==undefined ? a : this.attr("style") + " " + a)); } });
+  $.fn.extend({ flash : function(a){ const time=100; return this.animate({ backgroundColor: "red" }, time, function(){ $(this).animate({ backgroundColor: "transparent" }, time);}); } });
+  $.fn.extend({ ff : function(a){ return this.finish().flash();} });
+  $.fn.extend({ style : function(a){ return this.attr("style", a); } });
+
+  $(`.ul`)   .style(`display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;`);
+  $(`.ul li`).style(`margin: 0 20px;`)
+             .on   ("mouseover", function(){ $(this).ff().addStyle(`cursor: ${$(this).text()};`);})
+</script>
