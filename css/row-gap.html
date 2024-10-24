@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>row-gap</title>
+    <link rel="stylesheet" href="../resources/uds.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+    <main class="fb">
+        <section style="display: grid; grid-template-columns: repeat(2, 1fr);">
+    
+            <ul class="ul">
+                <li>row-gap: 0;</li>
+                <li>row-gap: 10%;</li>
+                <li>row-gap: 10cm;</li>
+                <li>row-gap: 10ch;</li>
+                <li>row-gap: 10em;</li>
+                <li>row-gap: 10in;</li>
+                <li>row-gap: 10mm;</li>
+                <li>row-gap: 10pc;</li>
+                <li>row-gap: 10pt;</li>
+                <li>row-gap: 10px;</li>
+                <li>row-gap: 10rem;</li>
+                <li>row-gap: 10vh;</li>
+                <li>row-gap: 10vmax;</li>
+                <li>row-gap: 10vmin;</li>
+                <li>row-gap: 10vw;</li>
+            </ul>
+        
+            <div class="test"> 
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+
+        <ul class="rf">
+            <li>row-gap</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap">https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap</a></li>
+        </ul>
+    </main>
+
+</body>
+
+</html>
+<style>
+
+
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+    integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+    $(`head`).append(
+        `<style>
+            .test{
+                display: grid;
+                grid-template-columns: repeat(3, 100px);
+                align-content: start;
+                
+                transition-duration: 1s;
+            }
+            .test div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>`
+    );
+
+</script>
+
+<script>
+
+    $(`.ul li`).mouseover(function () {
+        $(this).ff();
+        $(`.test`).style(`${$(this).text()}`);
+    });
+
+
+
+</script>

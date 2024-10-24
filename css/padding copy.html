@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding</title>
+</head>
+
+<body>
+
+  <section style="display: grid; grid-template-columns: 500px 500px;">
+    <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+      <li><nav><span>padding:</span> <span> 0 </span> <span> </span> <span> </span> <span> </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span> </span> <span> </span> <span> </span> <span>;</span></nav></li>
+      <li style="visibility: hidden;">&nbsp;</li>
+      <li><nav><span>padding:</span> <span> 0 </span> <span> 0 </span> <span> </span> <span> </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span> 0 </span> <span> </span> <span> </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span>100px</span> <span> </span> <span> </span> <span>;</span></nav></li>
+      <li style="visibility: hidden;">&nbsp;</li>
+      <li><nav><span>padding:</span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span> </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span> 0 </span> <span> 0 </span> <span> </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span>100px</span> <span> 0 </span> <span> </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span>100px</span> <span>100px</span> <span> </span> <span>;</span></nav></li>
+      <li style="visibility: hidden;">&nbsp;</li>
+      <li><nav><span>padding:</span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span> 0 </span> <span> 0 </span> <span> 0 </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span>100px</span> <span> 0 </span> <span> 0 </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span>100px</span> <span>100px</span> <span> 0 </span> <span>;</span></nav></li>
+      <li><nav><span>padding:</span> <span>100px</span> <span>100px</span> <span>100px</span> <span>100px</span> <span>;</span></nav></li>
+    </ul>
+    <div class="test-text">
+      <div>&nbsp;</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); align-items: center; gap: 10px;"><input class="input" type="range" value="0" /> <span class="input-value"></span></div>
+    <div class="test">
+      <div>&nbsp;</div>
+    </div>
+    <ul style="list-style-type: disc;" data-ke-list-type="disc">
+      <li><small>padding <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding">https://developer.mozilla.org/en-US/docs/Web/CSS/padding</a></small></li>
+    </ul>
+  </section>
+    
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    
+  $(`head`).append(
+    `<style>
+      .ul{
+        width: 400px;
+      }
+      .ul li nav{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        justify-items: center;
+      }
+      .test-text{
+        width: 100px;
+        height: 100px;
+
+        background-color: red;
+        transition-duration: 1s;
+      }
+      .test-text div{
+        width: 100px;
+        height: 100px;
+        background-color: white;
+      }
+
+
+
+      .test{
+        width: 100px;
+        height: 100px;
+
+        background-color: red;
+      }
+      .test div{
+        width: 100px;
+        height: 100px;
+        background-color: white;
+      }        
+    </style>`
+  );
+  
+</script>
+<script>
+  $(`.ul li`).mouseover(function(){
+    $(this).ff();
+    $(`.test-text`).style(`${$(this).text()}`);
+  })
+
+
+  $(`.input`).on(`input`, function(){
+    $(`.input-value`).text(`padding: ${$(this).val()}px`)
+    $(`.test`).style(`padding: ${$(this).val()}px;`);
+  })
+
+
+</script>
