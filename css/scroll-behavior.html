@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⏬scroll-behavior</title>
+   
+</head>
+<body>
+
+  <main>
+    
+      <ul class="ul">
+        <li>scroll-behavior: auto;</li>
+        <li>scroll-behavior: smooth;</li>
+      </ul>
+    
+      <div class="div">
+        <a id="top" href="#bottom">↓</a>
+        <h1></h1>
+        <a id="bottom" href="#top">↑</a>
+      </div>
+
+  </main>
+
+
+
+
+
+
+
+</body>
+</html>
+
+<style>
+  a{text-decoration: none; color: black;}
+  body{margin: 0;}
+  main{
+    display: flex;
+    column-gap: 10px;
+
+  }
+  .div{
+    width: 1000px;
+    height: 1500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(45deg, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+
+    border-radius: 10px;
+  }  
+  .div>a,
+  .div>h1{
+    color:white;
+    font-weight: bold;
+  }
+  .div>a{
+    font-size: 200px;
+  }
+
+  .ul{
+    position: sticky;
+    top:0;
+  }
+  .ul>li{
+
+    padding: 10px;
+  }
+
+
+  .color-smooth{ background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);}
+  .color-auto{ background: linear-gradient(45deg, #3ab5b0 0%, #3d99be 31%, #56317a 100%);}
+
+  .bright{
+    filter: invert(1) brightness(2) drop-shadow(3px 3px 3px black);
+    background-color: white;
+  }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf.js"></script>
+<script>
+
+
+  
+</script>
+
+<script>
+  $(`.ul li`).mouseover(function(){
+    $(`.ul li`).removeClass(`bright`);
+    $(this).addClass(`bright`);
+    const t=$(this).text();
+    t==`scroll-behavior: smooth;` 
+    ? $(`.div`).removeClass(`color-auto`)  .addClass(`color-smooth`) 
+    : $(`.div`).removeClass(`color-smooth`).addClass(`color-auto`) ;
+    
+    
+    $(`.div>h1`).text(`html{ ${t} }`);
+    $(`html`).style(`${t}`);
+
+  })
+  $(`#top`).mouseover(function(){
+    $(this).click();
+  })
+
+</script>
