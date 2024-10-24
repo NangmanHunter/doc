@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>white-space</title>
+</head>
+
+<body>
+
+  <section style="display: grid; grid-template-columns: repeat(2, 1fr); min-height: 300px;">
+    <ul style="list-style-type: disc;" data-ke-list-type="disc">
+      <li>white-space</li>
+      <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+        <li>normal</li>
+        <li>nowrap</li>
+        <li>pre</li>
+        <li>pre-wrap</li>
+        <li>pre-line</li>
+        <li>break-spaces</li>
+      </ul>
+    </ul>
+    <section>
+      <ul style="list-style-type: disc;" data-ke-list-type="disc">
+        <li><nav style="display: grid; grid-template-columns: 110px 300px; gap: 10px; align-items: center; white-space: nowrap;"><small><b>white-space</b></small> <small><b><a href="https://developer.mozilla.org/ko/docs/Web/CSS/white-space">https://developer.mozilla.org/ko/docs/Web/CSS/white-space</a></b></small></nav></li>
+        <li><nav style="display: grid; grid-template-columns: 110px 300px; gap: 10px; align-items: center; white-space: nowrap;"><small><b>Whitespace</b></small> <small><b><a href="https://tailwindcss.com/docs/whitespace">https://tailwindcss.com/docs/whitespace</a></b></small></nav></li>
+      </ul>
+    </section>
+    <p class="test" contenteditable="true" data-ke-size="size16">aaaaaaaaaaa aaa aaa</p>
+  </section>
+
+
+    
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    
+  $(`head`).append(
+      `<style>
+          .test{
+              width: 100px;
+              background-color: red;
+
+          }
+      </style>`
+  );
+
+</script>
+<script>
+  $(`.ul li`).mouseover(function(){
+      $(this).ff();
+      $(`.test`).style(`white-space: ${$(this).text()};`)
+  })
+
+
+</script>

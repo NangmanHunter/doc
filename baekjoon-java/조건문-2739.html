@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=content_copy" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <script src="../resources/udf.js"></script>
+    <link rel="stylesheet" href="../resources/uds.css">
+
+    <link rel="stylesheet" href="baekjoon-common.css">
+
+</head>
+<body>
+
+   
+    <main>
+        <h1 class="title"></h1>
+
+        <section></section>
+
+
+    </main>
+
+
+    <script src="baekjoon-common.js"></script>
+</body>
+</html>
+<style>
+
+
+
+
+</style>
+<script>
+    const sol1=
+`import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		while(!(1<=n && n<=9)) { n=s.nextInt(); }
+		
+		System.out.printf("%d * 1 = %d\\n", n, n*1);
+		System.out.printf("%d * 2 = %d\\n", n, n*2);
+		System.out.printf("%d * 3 = %d\\n", n, n*3);
+		System.out.printf("%d * 4 = %d\\n", n, n*4);
+		System.out.printf("%d * 5 = %d\\n", n, n*5);
+		System.out.printf("%d * 6 = %d\\n", n, n*6);
+		System.out.printf("%d * 7 = %d\\n", n, n*7);
+		System.out.printf("%d * 8 = %d\\n", n, n*8);
+		System.out.printf("%d * 9 = %d\\n", n, n*9);
+		
+	}
+	
+}
+`
+
+const sol2=
+`import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		while(!(1<=n && n<=9)) { n=s.nextInt(); }
+		
+		for(int i=1; i<10; i++) {
+			System.out.printf("%d * %d = %d\\n", n, i, n*i);
+		}
+		
+	}
+	
+}
+`
+
+const sol3=
+`import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+		while(!(1<=n && n<=9))  { n=s.nextInt(); }
+		for(int i=1; i<10; i++) { System.out.printf("%d * %d = %d\\n", n, i, n*i); }
+		
+	}
+	
+}
+`
+
+const sol4=`import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		int n;
+		do   { n=s.nextInt();  }
+		while( !(1<=n && n<=9) );
+		
+		for(int i=1; i<10; i++) { System.out.printf("%d * %d = %d\\n", n, i, n*i); }
+		
+	}
+	
+}`;
+
+const sol5=`import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		int n; do{n=s.nextInt();} while(!(1<=n && n<=9));
+		for(int i=1; i<10; i++) { System.out.printf("%d * %d = %d\\n", n, i, n*i); }
+		
+	}
+	
+}`;
+
+const sol6=`import java.util.Scanner;
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		int n; do{n=s.nextInt();} while(n<1 || 9<n);
+		for(int i=1; i<10; i++) { System.out.printf("%d * %d = %d\\n", n, i, n*i); }
+		
+	}
+	
+}`;
+const arr=[sol1, sol2, sol3, sol4, sol5, sol6];
+
+
+
+
+for(let i=0; i<arr.length ; i++){
+    const j=i+1;
+    $(`section`).append(
+        `<div class="box">
+            <h3><sup><span class="material-symbols-outlined clip-board clip-board-sol${j}">content_copy</span></sup> 풀이${j}</h3>
+            <pre class="sol sol${j}"></pre>
+        </div>`
+    );
+
+
+    $(`.sol${j}`).text(arr[i]);
+
+    
+    $(`.clip-board-sol${j}`).click(function(){
+        const s=$(`.sol${j}`).text();
+        navigator.clipboard.writeText(s)
+            .then(()   => { 
+                alert(`😘Copy❣️`);
+                $(this).style(`filter: brightness(2) drop-shadow(0px 0px 5px white) ; transform: rotateY(180deg)`);
+            })
+            .catch(err => { console.error("Failed to copy: ", err); });
+
+    })
+
+}
+
+
+
+
+
+
+</script>
+

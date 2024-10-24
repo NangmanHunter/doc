@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding-top</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../resources/uds.css"></link>
+    <script src="../resources/udf-minified.js"></script>
+
+</head>
+
+<body>
+
+  <main class="fb">
+    <section style="display: grid; grid-template-columns: 240px 1fr;">
+      <ul class="ul">
+        <li>padding-top: 0;</li>
+        <li>padding-top: 10%;</li>
+        <li>padding-top: 10cm;</li>
+        <li>padding-top: 10ch;</li>
+        <li>padding-top: 10em;</li>
+        <li>padding-top: 10in;</li>
+        <li>padding-top: 10mm;</li>
+        <li>padding-top: 10pc;</li>
+        <li>padding-top: 10pt;</li>
+        <li>padding-top: 10px;</li>
+        <li>padding-top: 10rem;</li>
+        <li>padding-top: 10vh;</li>
+        <li>padding-top: 10vmax;</li>
+        <li>padding-top: 10vmin;</li>
+        <li>padding-top: 10vw;</li>
+      </ul>
+      <div class="div">
+        <div>&nbsp;</div>
+      </div>
+  
+    </section>
+  
+    <ul class="rf">
+      <li>padding-top</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top">https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top</a></li>
+    </ul>
+
+  </main>
+    
+</body>
+</html>
+<style>
+  .div, 
+  .div div{
+    width: 100px;
+    height: 100px;
+  }
+  .div    { background-color: red; transition-duration: 1s; }
+  .div div{ background-color: black;                        }
+   
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    
+  $(`head`).append(
+    ``
+  );
+  
+</script>
+<script>
+  $(`.ul li`).mouseover(function(){
+    $(this).ff();
+    $(`.div`).style(`${$(this).text()}`);
+  })
+</script>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide</title>
+</head>
+
+<body>
+
+  <section style="display: grid; grid-template-columns: repeat(2, 1fr); min-height: 300px;">
+    <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+      <li>hidden</li>
+      <li>display: none</li>
+      <li>visibility: hidden</li>
+    </ul>
+    <nav>
+      <div class="test">&nbsp;</div>
+      <div style="width: 100px; height: 100px; background-color: black;">&nbsp;</div>
+      <h5>&nbsp;</h5>
+    </nav>
+  </section>
+
+
+
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    
+  $(`head`).append(
+      `<style>
+          .test{
+              width: 100px; height: 100px; background-color: red;
+          }
+      </style>`
+  );
+
+</script>
+<script>
+
+  $(`ul li`).mouseover(function(){
+      $(this).ff();
+
+      if($(this).text()==`hidden`){
+          $(`.test`).prop("hidden", true)
+                    .pft(`nav`,`h5`,'<div hidden><div>');
+
+          return;
+      }
+
+      if($(this).text()==`display: none`){
+          $(`.test`).attr("style", `display: none`)
+                    .pft(`nav`,`h5`,'<div style="display: none;"><div>');
+          return;
+      }
+
+      if($(this).text()==`visibility: hidden`){
+          $(`.test`).attr("style", `visibility: hidden`)
+                    .pft(`nav`,`h5`,'<div style="visibility: hidden"><div>');
+          return;
+      }
+
+  })
+
+  $(`ul li`).mouseout(function(){
+      $(`.test`).removeAttr("hidden")
+                .removeAttr("style");
+  })
+
+</script>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list-style-position</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+
+    <main style="display: flex; justify-content: space-between;">
+        <section style="display: grid; grid-template-columns: 200px 200px;">
+
+        
+            <ul class="ul">
+                <li>list-style-position: inside;</li>
+                <li>list-style-position: outside;</li>
+            </ul>
+            
+            <ul class="test">
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+                <li>&nbsp;</li>
+            </ul>
+            
+            
+        </section>
+        
+        <ul class="rf">
+            <li>list-style-position</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position">https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position</a></li>
+        </ul>
+    </main>
+
+
+
+</body>
+
+</html>
+<style>
+
+
+
+</style>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+    integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+    $(`head`).append(
+        `<style>
+            .test{
+                background-color: red;
+            }
+
+            .rf>li:nth-child(2n){
+                list-style-type: '🚀';
+            }
+        </style>`
+    );
+
+</script>
+
+<script>
+
+    $(`.ul li`).mouseover(function () { 
+        $(this).ff();
+        $(`.test`).style(`${$(this).text()}`);
+    });
+
+
+
+</script>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toggleㆍeffect</title>
+
+</head>
+
+<body>
+
+  <main style="display: flex; justify-content: space-between;">
+    <section style=" display: grid; grid-template-columns: repeat(2, 1fr); width: 400px;  ">
+    
+      <ul style="grid-row: 1 / span 2;">
+        <li>toggle</li>
+        <ul class="ul">
+          <li>&nbsp;</li>
+          <li>blind</li>
+          <li>bounce</li>
+          <li>clip</li>
+          <li>drop</li>
+          <li>explode</li>
+          <li>fade</li>
+          <li>fold</li>
+          <li>highlight</li>
+          <li>puff</li>
+          <li>pulsate</li>
+          <li>scale</li>
+          <li>shake</li>
+          <li>size</li>
+          <li>slide</li>
+          <li>transfer</li>
+        </ul>
+      </ul>
+      
+      <h1 class="h1" style="height: 100px;">&nbsp;</h1>
+      <div class="div"></div>
+
+    </section>
+
+    <section style="display: flex;">
+      <ul>
+        <li>toggle, jQuery UI</li>
+        <li>toggle, jQuery</li>      
+        <li>Effects</li>      
+        <li>blind</li>
+        <li>bounce</li>
+        <li>clip</li>
+        <li>drop</li>
+        <li>explode</li>
+        <li>fade</li>
+        <li>fold</li>
+        <li>highlight</li>
+        <li>puff</li>
+        <li>pulsate</li>
+        <li>scale</li>
+        <li>shake</li>
+        <li>size</li>
+        <li>slide</li>
+        <li>transfer</li>
+      </ul>
+
+      <ul>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/toggle/">https://api.jqueryui.com/toggle/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jquery.com/toggle/">https://api.jquery.com/toggle/</a></li>      
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/category/effects/">https://api.jqueryui.com/category/effects/</a></li>    
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/blind-effect/">https://api.jqueryui.com/blind-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/bounce-effect/">https://api.jqueryui.com/bounce-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/clip-effect/">https://api.jqueryui.com/clip-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/drop-effect/">https://api.jqueryui.com/drop-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/explode-effect/">https://api.jqueryui.com/explode-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/fade-effect/">https://api.jqueryui.com/fade-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/fold-effect/">https://api.jqueryui.com/fold-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/highlight-effect/">https://api.jqueryui.com/highlight-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/puff-effect/">https://api.jqueryui.com/puff-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/pulsate-effect/">https://api.jqueryui.com/pulsate-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/scale-effect/">https://api.jqueryui.com/scale-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/shake-effect/">https://api.jqueryui.com/shake-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/size-effect/">https://api.jqueryui.com/size-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/slide-effect/">https://api.jqueryui.com/slide-effect/</a></li>
+        <li style="list-style-type: '🚀';"><a href="https://api.jqueryui.com/transfer-effect/">https://api.jqueryui.com/transfer-effect/</a></li>
+      </ul>
+
+    </section>
+
+  </main>
+
+
+
+</body>
+
+</html>
+
+<style>
+
+
+
+
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+  $(`head`).append(
+    `<style>
+        .div{
+          width: 100px;
+          height: 100px;
+          background-color: red;
+
+
+        }
+    </style>`
+  );
+
+</script>
+
+<script>
+
+  $(`.ul li`).mouseover(function(){
+    $(this).ff();
+    let m=$(this).text();
+    m==`\u00A0` ? $(`.h1`).text(`.toggle()`) : $(`.h1`).text(`.toggle(\`${m}\`)`);
+    m==`\u00A0` ? $(`.div`).toggle()         : $(`.div`).toggle(m)               ;
+  });
+
+</script>

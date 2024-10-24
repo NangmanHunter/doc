@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font-weight</title>
+</head>
+
+<body>
+
+  <section style="display: grid; grid-template-columns: 200px 800px;">
+    <ul style="list-style-type: disc;" data-ke-list-type="disc">
+      <li>font-weight</li>
+      <ul class="ul" style="list-style-type: disc;" data-ke-list-type="disc">
+        <li>normal</li>
+        <li>bold</li>
+        <li>lighter</li>
+        <li>bolder</li>
+      </ul>
+      <ul style="list-style-type: disc;" data-ke-list-type="disc">
+        <li>1 ~ 1000</li>
+      </ul>
+    </ul>
+    <aside class="aside">
+      <div class="test" contenteditable="true">aaa</div>
+      <div style="width: 300px;">
+      <ul style="list-style-type: disc;" data-ke-list-type="disc">
+        <li><input class="weight" max="1000" min="1" type="range" /> <span class="weight-val"></span></li>
+        <li><small>400(normal)</small></li>
+        <li><small>700(bold)</small></li>
+      </ul>
+      </div>
+    </aside>
+  </section>
+  <nav class="ref">
+    <ul style="list-style-type: disc;" data-ke-list-type="disc">
+      <li>
+        <div><small>font-weight</small> <small><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight</a></small></div>
+      </li>
+    </ul>
+  </nav>
+
+    
+</body>
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+    
+  $(`head`).append(
+    `<style>
+      .aside{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+      }
+
+      .test{
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+      }
+
+
+      .ref li div{
+        display: grid;
+        grid-template-columns: 100px 900px;
+      }        
+    </style>`
+  );
+  
+</script>
+<script>
+
+  $(`.weight`).on(`input`, function(){
+    if($(`.weight`).val()==`400`){
+
+    }
+    $(`.weight-val`).text(`${$(`.weight`).val()}`);
+
+    $(`.test`).style(`font-weight: ${$(`.weight`).val()};`);
+
+  })
+
+  $(`.ul li`).mouseover(function(){
+    $(this).ff();
+    $(`.test`).style(`font-weight: ${$(this).text()};`);
+    
+  })
+
+
+
+
+</script>
