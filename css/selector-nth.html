@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selector-nth</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../resources/uds.css"></link>
+    <script src="../resources/udf-minified.js"></script>
+
+</head>
+
+<body>
+
+    <main class="fb">
+
+        <article>
+            <section class="section">
+                <div>div</div>
+                <nav>nav</nav>
+                <div></div>
+                <nav></nav>
+                <div></div>
+                <nav></nav>
+                <div></div>
+                <nav></nav>
+                <div></div>
+                <nav></nav>
+                <div></div>
+                <nav></nav>
+            </section>
+        
+            <ul class="ul">
+                <li>div:nth-child(0)</li>
+                <li>div:nth-child(1)</li>
+                <li>div:nth-child(2)</li>
+                <li>div:nth-last-child(0)</li>
+                <li>div:nth-last-child(1)</li>
+                <li>div:nth-last-child(2)</li>
+                <li>div:nth-of-type(0)</li>
+                <li>div:nth-of-type(1)</li>
+                <li>div:nth-of-type(2)</li>
+                <li>div:nth-last-of-type(0)</li>
+                <li>div:nth-last-of-type(1)</li>
+                <li>div:nth-last-of-type(2)</li>
+
+                <li>nav:nth-child(0)</li>
+                <li>nav:nth-child(1)</li>
+                <li>nav:nth-child(2)</li>
+                <li>nav:nth-last-child(0)</li>
+                <li>nav:nth-last-child(1)</li>
+                <li>nav:nth-last-child(2)</li>
+                <li>nav:nth-of-type(0)</li>
+                <li>nav:nth-of-type(1)</li>
+                <li>nav:nth-of-type(2)</li>
+                <li>nav:nth-last-of-type(0)</li>
+                <li>nav:nth-last-of-type(1)</li>
+                <li>nav:nth-last-of-type(2)</li>
+
+                <li>div:nth-child(2n-1)</li>
+                <li>div:nth-child(2n)</li>
+                <li>div:nth-child(2n+1)</li>
+                <li>div:nth-last-child(2n-1)</li>
+                <li>div:nth-last-child(2n)</li>
+                <li>div:nth-last-child(2n+1)</li>
+                <li>div:nth-of-type(2n-1)</li>
+                <li>div:nth-of-type(2n)</li>
+                <li>div:nth-of-type(2n+1)</li>
+                <li>div:nth-last-of-type(2n-1)</li>
+                <li>div:nth-last-of-type(2n)</li>
+                <li>div:nth-last-of-type(2n+1)</li>
+
+                <li>nav:nth-child(2n-1)</li>
+                <li>nav:nth-child(2n)</li>
+                <li>nav:nth-child(2n+1)</li>
+                <li>nav:nth-last-child(2n-1)</li>
+                <li>nav:nth-last-child(2n)</li>
+                <li>nav:nth-last-child(2n+1)</li>
+                <li>nav:nth-of-type(2n-1)</li>
+                <li>nav:nth-of-type(2n)</li>
+                <li>nav:nth-of-type(2n+1)</li>
+                <li>nav:nth-last-of-type(2n-1)</li>
+                <li>nav:nth-last-of-type(2n)</li>
+                <li>nav:nth-last-of-type(2n+1)</li>
+            </ul>
+        </article>
+        
+        <ul class="rf">
+            <li>:nth-child()</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child">https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child</a></li>
+            <li>:nth-last-child()</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-child">https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-child</a></li>
+            <li>:nth-last-of-type()</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-of-type">https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-of-type</a></li>
+            <li>:nth-of-type()</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type">https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type</a></li>
+        </ul>
+
+    </main>
+
+
+</body>
+</html>
+
+
+<script src="../resources/udc.js"></script>
+<script>
+
+    $(`head`).append(`
+<style>
+    .section{
+        display: flex;
+    }
+    .section div,.section nav{
+        width: 100px;
+        height: 100px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .section div{ background-color: black; color:white;}
+    .section nav{ background-color: #aaa; }
+
+    .ul{
+        display: grid;
+        
+        grid-auto-flow: column;
+        grid-template-rows: repeat(12, 1fr);
+        
+        column-gap: 40px;
+    }
+</style>
+<style class="style"></style>
+    `);
+
+</script>
+<script>
+    $(`.ul li`).mouseover(function(){
+        $(this).ff();
+        $(`.style`)
+            .text(``)
+            .text(`.section ${$(this).text()}{ background-color: red; }`);
+    })
+</script>

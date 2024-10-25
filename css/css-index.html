@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <script src="resources/udf.js"></script>
+    <link rel="stylesheet" href="resources/uds.css">
+
+</head>
+<body>
+
+    
+
+
+   <ul>
+    <li>a</li>
+    <li>b
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </li>
+    <li>b</li>
+   </ul>
+
+
+</body>
+</html>
+<script src="resources/udc.js"></script>
+<script>
+    $(`ul li`).click(function(){
+        $(this).children(`ul`).slideToggle();
+    })
+</script>

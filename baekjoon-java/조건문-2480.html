@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=content_copy" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <script src="../resources/udf.js"></script>
+    <link rel="stylesheet" href="../resources/uds.css">
+
+    <link rel="stylesheet" href="baekjoon-common.css">
+
+</head>
+<body>
+
+   
+    <main>
+        <h1 class="title"></h1>
+        <div class="box">
+            <h3><sup><span class="material-symbols-outlined clip-board clip-board-sol1">content_copy</span></sup> 풀이1</h3>
+            <pre class="sol sol1"></pre>
+        </div>
+
+        
+
+    </main>
+
+
+    <script src="baekjoon-common.js"></script>
+</body>
+</html>
+<style>
+
+
+
+</style>
+
+<script>
+    const sol1=`
+import java.util.Scanner;
+public class Main {
+    
+    public static void main(String[] args) {
+        
+        Scanner s=new Scanner(System.in);
+        int n1=s.nextInt();
+        int n2=s.nextInt();
+        int n3=s.nextInt();
+        
+        while(!(1<=n1 && n1<=6)) { n1=s.nextInt(); }
+        while(!(1<=n2 && n2<=6)) { n2=s.nextInt(); }
+        while(!(1<=n3 && n3<=6)) { n3=s.nextInt(); }
+
+        
+        int[] a= {n1,n2,n3};
+        int f=0; 
+        int j=-1; int k=0;
+        
+        for(int i=0; i<a.length-1; i++) {
+            for(int l=0; l<a.length-1-i; l++) {
+                if(a[i]==a[i+1+l]) { ++f; j=i; }
+                if(a[k] <a[i+1+l]) { k=i+1+l;  }
+            }
+        }
+        
+        
+        int sum=0;
+        if(f==3) { sum=10000+a[0]*1000; }
+        if(f==1) { sum=1000 +a[j]*100;  }
+        if(f==0) { sum=      a[k]*100;  }
+        System.out.println(sum);
+        
+    }
+    
+}
+`
+$(`.sol1`).text(sol1);
+
+
+
+
+    $(`.clip-board-sol1`).click(function(){
+        const s=$(`.sol1`).text();
+        navigator.clipboard.writeText(s)
+            .then(()   => { 
+                alert(`😘Copy❣️`);
+                $(this).style(`filter: brightness(2) drop-shadow(0px 0px 1px white) invert(1); transform: rotateY(180deg)`);
+            })
+            .catch(err => { console.error("Failed to copy: ", err); });
+
+    })
+
+
+</script>
+

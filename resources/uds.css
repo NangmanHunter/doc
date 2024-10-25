@@ -1,0 +1,17 @@
+.fb{ display: flex; justify-content: space-between;                      }
+.fc{ display: flex; justify-content: center;        align-items: center; }
+.fe{ display: flex; justify-content: end;           align-items: end;    }
+.fo{ display: flex; flex-direction: column;                              }
+.g2{ display: grid; grid-template-columns: repeat(2, 1fr); }
+
+.rf,.rf-a{
+    display: grid; 
+    grid-template-columns:  minmax(100px, auto) 1fr; 
+    column-gap: 50px;  
+    align-content: start;
+}
+.rf  >li:nth-child(2n), 
+.rf-a>li:nth-child(2n){ list-style-type: '🚀'; }
+
+
+
