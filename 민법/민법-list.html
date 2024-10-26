@@ -11,6 +11,10 @@
     <link   href="../resources/uds.css" rel="stylesheet"></link>
     <script src ="../resources/udf.js"></script>
 
+    
+    <link   href="btn-box.css" rel="stylesheet"></link>
+    <link   href="ul-toggle.css" rel="stylesheet"></link>
+
 
 </head>
 <body>
@@ -23,11 +27,10 @@
         <button class="btn spread"    >★</button>
         <button class="btn fold"      >●</button>
         <button class="btn reset"     >∞</button>
-
     </section>
 
     <h4>민법</h4>
-    <ul class="top">
+    <ul class="top ul">
         <li>본문
             <ul>
                 <li>제1편 총칙
@@ -1955,65 +1958,31 @@
     </ul>
 
 
-
+    <script src="ul-toggle.js"></script>
 </body>
 </html>
 <style>
-    *{box-sizing: border-box;}
-    body{
-        margin: 0;
-    }
+    *   {box-sizing: border-box;}
+    body{margin: 0;}
 
-    .btn-box{
-        display: flex;
-        position: sticky;
-        top:0;
 
-    }
+
     .hor-ul{
         display: flex;
         column-gap: 40px;
     }
 
-    .btn{
-        background-color: black;
-        color: white;
-        width: 50px;
-        height: 50px;
-        border: none;
-        border-radius: 10px;
-        font-size: 30px;
-        font-weight: bold;
 
-        font-family: inherit;
-
-        display: flex;
-        justify-content: center;
-
-        cursor: pointer;
-    }
-    .btn:hover{
-        filter: invert(1);
-    }
 
 
     /* JS */
-    .toggle { list-style-type: '📚'; }
     .pointer{ cursor: pointer;}
     
 </style>
 
 
 <script>
-    function toggleEvent(){
-        $(`ul li`).click(function(e){
-            $(this).toggleClass(`toggle`);
-            $(this).children(`ul`).slideToggle();
-            e.stopPropagation();
-        })
-    }
 
-    toggleEvent();
 
 </script>
 <script>

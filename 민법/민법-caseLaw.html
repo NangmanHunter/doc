@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src ="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src ="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <link   href="../resources/uds.css" rel="stylesheet"></link>
+    <script src ="../resources/udf.js"></script>
+
+    <link   href="btn-box.css" rel="stylesheet"></link>
+
+
+</head>
+<body>
+
+
+
+      
+
+
+  
+
+
+
+
+
+
+</body>
+</html>
+<style>
+    *          {box-sizing: border-box;      }
+    pre        {margin: 0; font-family: auto;}
+    h2,h3,h5,h6{margin: 0;                   }
+    body       {margin: 0;                   }
+
+
+   .issue-box{
+      display: flex;
+      column-gap: 10px;
+
+   }
+   .issue-box ul{
+      padding: 0 0 0 30px;
+    }
+
+
+
+
+   
+   .positive-text,.negative-text{
+  
+      font-weight: bold;
+  
+    
+
+      border-radius: 5px;
+   }
+   .positive-text{color: crimson}
+   .negative-text{color: dodgerblue}
+
+
+</style>
+
+
+<script>
+    $(`.enlarge`).click(function (e) { 
+        $(`.pro h5`).each(function() { $(this).replaceWith(`<h3>${$(this).html()}</h3>`); });
+        $(`.pro h6`).each(function() { $(this).replaceWith(`<h2>${$(this).html()}</h2>`); });
+    });
+    $(`.reduce`).click(function (e) { 
+        $(`.pro h3`).each(function() { $(this).replaceWith(`<h5>${$(this).html()}</h5>`); });
+        $(`.pro h2`).each(function() { $(this).replaceWith(`<h6>${$(this).html()}</h6>`); });
+    });
+
+
+
+</script>
+
+

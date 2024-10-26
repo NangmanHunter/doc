@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src ="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src ="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <link   href="../resources/uds.css" rel="stylesheet"></link>
+    <script src ="../resources/udf.js"></script>
+
+    <link   href="btn-box.css" rel="stylesheet"></link>
+    <link   href="ul-toggle.css" rel="stylesheet"></link>
+    <link   href="민법-common.css" rel="stylesheet"></link>
+
+
+</head>
+<body>
+
+
+   <h5>제3조(권리능력의 존속기간)</h5>
+   <h4>● 태아ㆍ권리능력</h4>
+   <section class="issue-box">
+      <div class="negative">
+         X
+      </div>
+      <div>
+         <ul class="n2">
+            <li>생존                            </li><li>(§3)</li>
+            <li>증여ㆍ일반증여ㆍ생전증여ㆍ수증능력 </li><li>(判81다534)</li>
+            <li>사인증여                         </li><li>(多)</li>
+            <li>인지청구                         </li><li>(§858反)</li>
+         </ul>
+      </div>
+      <div class="positive">
+         O
+      </div>
+      <div>
+         <ul class="ul-n2 n2">
+            <li>불법행위
+               <ul>
+                  <li>부   생명침해</li>
+                  <li>태아 손해배상</li>
+               </ul>
+            </li>
+            <li>
+               <ul>
+                  <li>(判93다4663)</li>
+                  <li>(判67다2869)</li>
+               </ul>
+            </li>
+
+            <li>상속ㆍ재산상속</li><li>(§1000③)</li>
+            <li>유증          </li><li>(§1064ㆍ1000③)</li>
+            <li>유류분        </li><li>(§1118ㆍ1001ㆍ1000③)</li>
+         </ul>
+
+      </div>
+      <div>
+         <ul class="n2">
+            <li class="n">권리능력</li><li>(§3)   </li>
+            <li class="n">증여    </li><li>(§554) </li>
+            <li class="n">사인증여</li><li>(§562) </li>
+            <li class="p">불법행위</li><li>(§750) </li>
+            <li class="n">인지청구</li><li>(§858) </li>
+            <li class="p">상속    </li><li>(§1000)</li>
+            <li class="p">유증    </li><li>(§1064)</li>
+            <li class="p">유류분  </li><li>(§1118)</li>
+         </ul>
+         
+
+      </div>
+
+
+   </section>
+
+      
+
+
+  
+
+
+
+
+
+   <script src="ul-toggle.js"></script>
+   <script src="../resources/udc.js"></script>
+</body>
+</html>
+<style>
+    *   {box-sizing: border-box;      }
+    body{margin: 0;                  }
+
+
+   .issue-box{
+      display: grid; 
+      grid-template-columns: repeat(2, auto); 
+      min-width: 0px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 50px 1fr; 
+      gap: 10px; 
+      grid-template-areas: 
+         "a1 a3 a5"
+         "a2 a4 a5";
+   }
+   .issue-box>div:nth-child(1) { grid-area: a1; }
+   .issue-box>div:nth-child(2) { grid-area: a2; }
+   .issue-box>div:nth-child(3) { grid-area: a3; }
+   .issue-box>div:nth-child(4) { grid-area: a4; }
+   .issue-box>div:nth-child(5) { grid-area: a5; }
+
+   .issue-box ul{padding: 0 0 0 30px;}
+   .issue-box>div{min-height: 50px;}
+
+   .ref{
+      font-size: 10px;
+      color:#aaa;
+   }
+
+   
+   .positive,
+   .negative{
+      font-weight: bold; 
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      
+      
+   }
+   .positive{
+      align-items: flex-start;        
+      color: red;
+      filter: drop-shadow(0px 0px 5px red);
+   }
+   .negative{
+      align-items: flex-end;
+      color: blue;
+      filter: drop-shadow(0px 0px 5px blue);
+   }
+
+
+
+
+</style>
+
+
+<script>
+   function toggleEventN2(){
+      $(`.ul-n2 li`).click(function(e){
+         $(this).toggleClass(`toggle`);
+         $(this).children(`ul`).slideToggle();
+         $(this).next(`li`).children(`ul`).slideToggle();
+         e.stopPropagation();
+      })
+   }
+
+   toggleEventN2();
+
+
+</script>
+
+

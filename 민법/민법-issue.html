@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src ="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src ="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+    <link   href="../resources/uds.css" rel="stylesheet"></link>
+    <script src ="../resources/udf.js"></script>
+
+    <link   href="btn-box.css" rel="stylesheet"></link>
+
+
+</head>
+<body>
+
+
+   <h5>제3조(권리능력의 존속기간)</h5>
+   <ul>
+      <li>태아</li>
+   </ul>
+  
+
+
+
+
+
+
+</body>
+</html>
+<style>
+    *          {box-sizing: border-box;      }
+    pre        {margin: 0; font-family: auto;}
+    h2,h3,h5,h6{margin: 0;                   }
+    body       {margin: 0;                   }
+
+
+    .nx2-auto{
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 50px;
+    }
+    .nx2-auto>li:nth-child(2n){list-style-type: '⚖️';}
+
+    .nx2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        list-style: none;
+
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px white;
+    }
+    .nx2>li{
+      padding: 10px;
+    }
+
+   .positive,.negative {padding: 0 0 0 20px; list-style-type: disc;}
+   .positive>li::marker{color:crimson}
+   .negative>li::marker{color: dodgerblue}
+   
+   .positive-text,.negative-text{
+      font-size: 100px; 
+      font-weight: bold;
+      text-align: center;
+    
+
+      border-radius: 5px;
+   }
+   .positive-text{ filter: drop-shadow(3px 3px 3px crimson); color: crimson}
+   .negative-text{ filter: drop-shadow(3px 3px 3px dodgerblue);color: dodgerblue}
+
+   .positive-text:hover,.negative-text:hover{
+      transition-duration: 1s;
+      transform: rotateY(180deg);
+   }
+
+</style>
+
+
+<script>
+    $(`.enlarge`).click(function (e) { 
+        $(`.pro h5`).each(function() { $(this).replaceWith(`<h3>${$(this).html()}</h3>`); });
+        $(`.pro h6`).each(function() { $(this).replaceWith(`<h2>${$(this).html()}</h2>`); });
+    });
+    $(`.reduce`).click(function (e) { 
+        $(`.pro h3`).each(function() { $(this).replaceWith(`<h5>${$(this).html()}</h5>`); });
+        $(`.pro h2`).each(function() { $(this).replaceWith(`<h6>${$(this).html()}</h6>`); });
+    });
+
+
+
+</script>
+
+

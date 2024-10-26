@@ -1,0 +1,26 @@
+.btn-box{
+    display: flex;
+    position: sticky;
+    top:0;
+}
+
+.btn{
+    background-color: black;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+
+    font-family: inherit;
+
+    display: flex;
+    justify-content: center;
+
+    cursor: pointer;
+}
+.btn:hover{
+    filter: invert(1);
+}
