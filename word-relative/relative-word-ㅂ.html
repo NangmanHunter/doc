@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relative-word</title>
+
+</head>
+
+<body>
+
+
+  <section class="section">
+ 
+    ㆍㅂ
+    바깥쪽 안쪽
+    밖쪽 안쪽
+    밖 안
+    외 내
+    외측 내측
+    &hArr;
+    안쪽 바깥쪽
+    안쪽 밖쪽
+    내측 외측
+    내 외
+    내외
+    안밖
+    안팎
+    &nbsp;
+    발생 소멸
+    생성 소멸
+    추가 소멸
+    발생 삭제
+    생성 삭제
+    추가 삭제
+    (+) (-)
+    &nbsp;
+    추가 삭제 변경
+    추가 삭제 교환
+    추가 변경 삭제
+    추가 교환 삭제
+    발생 변경
+    추가 교환
+    발생 변경 소멸
+    발생 변경 소멸
+    추가 교환 삭제
+    추가 수정 삭제
+    &nbsp;
+    추가 삭제
+    삽입 삭제
+    Add Remove
+    Insert Delete
+    &nbsp;
+    발송 송달
+    발송 도달
+    발송주의 도달주의
+    송달하기 송달받음
+    발송하기 송달받음
+    송달 수송달
+    송달자 수송달자
+    &nbsp;
+    범위
+    적용범위
+    &nbsp;
+    법정 임의
+    법정 계약
+    법정후견 임의후견
+    법정대리인 임의대리인
+    법정후견 계약후견
+    &nbsp;
+    법률상지위 사실상지위
+    법률상지위 비법률적지위
+    법률상지위 임의적지위
+    강행적지위 임의적지위
+    필수적지위 임의적지위
+    필요적지위 임의적지위
+    법적지위 사적지위
+    법적관계 사적관계
+    &nbsp;
+
+    번역 오역
+    번역 비번역
+    &nbsp;
+    &nbsp;
+    고정 비고정
+    고정 유동
+    고정 가변
+    불변 가변
+    상수 변수
+    정적 동적
+    &nbsp;
+    본소 반소
+    &nbsp;
+    방론 본론
+    방론 본론 방론
+    &nbsp;
+    서론 본론
+    서론 본론 결론
+    서론 본론 결론
+    &nbsp;
+    본론 방론
+    본원 방원
+    본원 지원
+    본점 지점
+    본 지
+    근 지
+    뿌리 가지
+    &nbsp;
+    전단 후단
+    전문 후문
+    본문 단서
+    원칙 예외
+    기본
+    기본값
+    설정값
+    디폴트
+    프리셋
+    패시브 액티브
+    &nbsp;
+    &nbsp;
+    가부=가능여부
+    여부
+    적부=적법여부
+    허부=허용여부
+    허부=허가여부
+    &nbsp;
+    부인 항변
+    부인 자백
+    &nbsp;
+    통상기간 불변기간
+    불복부분 비불복부분
+    불복부분 미불복부분
+    불복범위 비불복범위
+    불복범위 미불복범위
+    심판대상 비심판대상
+    심판범위 비심판범위
+    불복 비불복
+    불복 미불복
+    심판 비심판
+    &nbsp;
+    &nbsp;
+ 
+ 
+  </section>
+
+  
+</body>
+
+</html>
+
+<style>
+
+
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+  $(`head`).append(
+    `<style>
+        .section p{
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 120px 50px);
+
+          margin: 0;
+        }
+        .section p>span:nth-child(even){
+          justify-self: center;
+        }
+    </style>`
+  );
+
+</script>
+
+<script>
+
+  for (let i = 0; i < $(`.section p`).length; i++) {
+
+    const arr = $($(`.section p`)[i]).html().split(` `);
+    for (let j = 0; j < arr.length; j++) {
+      arr[j] = `<span>${arr[j]}</span>`
+    }
+
+    $($(`.section p`)[i]).html(arr.join(`<span>↔</span>`))
+
+  }
+
+</script>

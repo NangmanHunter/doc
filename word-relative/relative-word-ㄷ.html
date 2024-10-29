@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relative-word</title>
+
+</head>
+
+<body>
+
+
+  <section class="section">
+
+    ㆍㄷ
+    &nbsp;
+    소대
+    소 대
+    &hArr;
+    대소
+    대 소
+    대 소
+    대량 소량
+    대용량 소용량
+    &nbsp;
+    단수 다수
+    단일 다수
+    단항 다항
+    한개 다수
+    단 다
+    한 다
+    &nbsp;
+    당사자 제3자
+    상대적 절대적
+    상대효 절대효
+    대인효 대세효
+    판결효 심결효
+    대항요건 효력발생요건
+    대항요건 효력발생
+    &nbsp;
+    인 물
+    인적 물적
+    대인적 대물적
+    대인효 대물효
+    &nbsp;
+    대위소송 직접소송
+    대위소송 소송
+    대위소 소송
+    대위소 소송
+    대위 소송
+    &nbsp;
+    대위청구 직접청구
+    대위청구 청구
+    대위 청구
+    간접소송 직접소송
+    &nbsp;
+    더함 덜함
+    덜함 더함
+    덜음 더함
+    덜다 더하다
+    &nbsp;
+    순차적 한번에
+    순차적 단번에
+    단계적 단번에
+    단계적 단일적
+    단계적 획일적
+    &hArr;
+    한번에 순차적
+    단번에 순차적
+    동시적 이시적
+    동시 이시
+    &nbsp;
+    동일 상이
+    동일 차이
+    동 이
+    동 차
+    &nbsp;
+    동의 부동의
+    동의 비동의
+    
+    &nbsp;
+    동의어 유의어
+    동어 유어
+    동의어 반의어
+    동의어 반대어
+    동의어 상대어
+    동의어 대립어
+    동어 반어
+    동어 대어
+    &nbsp;
+    들다 나다
+    드는 나는
+    &nbsp;
+    &nbsp;
+    등록 불등록
+    등록 부등록
+    &nbsp;
+    붙임 띄움
+    붙여쓰기 띄어쓰기
+    &nbsp;
+    비교 대조
+    공통 차이
+    &nbsp;
+    비교대조
+    &nbsp;
+    비교
+    대조
+    차이
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    &nbsp;
+
+ 
+  </section>
+
+  
+</body>
+
+</html>
+
+<style>
+
+
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+  $(`head`).append(
+    `<style>
+        .section p{
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 120px 50px);
+
+          margin: 0;
+        }
+        .section p>span:nth-child(even){
+          justify-self: center;
+        }
+    </style>`
+  );
+
+</script>
+
+<script>
+
+  for (let i = 0; i < $(`.section p`).length; i++) {
+
+    const arr = $($(`.section p`)[i]).html().split(` `);
+    for (let j = 0; j < arr.length; j++) {
+      arr[j] = `<span>${arr[j]}</span>`
+    }
+
+    $($(`.section p`)[i]).html(arr.join(`<span>↔</span>`))
+
+  }
+
+</script>

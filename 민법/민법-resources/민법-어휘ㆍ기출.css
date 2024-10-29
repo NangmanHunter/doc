@@ -1,0 +1,36 @@
+.relative{
+    display: inline-grid;
+    grid-template-columns: repeat(3, auto);
+
+    position: relative;
+
+    column-gap: 10px;
+
+    grid-auto-rows: min-content;
+}
+.relative::before,
+.previous::before{
+    position: absolute;
+    top: -16px;
+    left: 20px;
+    font-size: 8px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    padding: 2.5px;
+}
+.relative::before{
+    content: '어휘';
+}
+.relative>li:nth-child(3n-1),
+.relative>li:nth-child(3n){
+    list-style-type: none;
+}
+
+
+.previous{
+    position: relative;
+}
+.previous::before{
+    content: '기출';
+}

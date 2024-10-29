@@ -6,14 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script src ="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src ="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
-    <link   href="../resources/uds.css" rel="stylesheet"></link>
-    <script src ="../resources/udf.js"></script>
 
-    
-    <link   href="btn-box.css" rel="stylesheet"></link>
-    <link   href="ul-toggle.css" rel="stylesheet"></link>
+
 
 
 </head>
@@ -24,9 +18,10 @@
         <button class="btn top-toggle">→</button>
         <button class="btn horizontal">↔</button>
         <button class="btn vertical"  >↕</button>
+        <button class="btn reset"     >∞</button>
         <button class="btn spread"    >★</button>
         <button class="btn fold"      >●</button>
-        <button class="btn reset"     >∞</button>
+        <button class="btn detail"    >▼</button>
     </section>
 
     <h4>민법</h4>
@@ -46,11 +41,13 @@
                                 <li>제1절 능력
                                     <ul>
                                         <li>제3조 권리능력의 존속기간</li>
+                                        <li class="detail-divide"></li>
                                         <li>제4조 성년</li>
                                         <li>제5조 미성년자의 능력</li>
                                         <li>제6조 처분을 허락한 재산</li>
                                         <li>제7조 동의와 허락의 취소</li>
                                         <li>제8조 영업의 허락</li>
+                                        <li class="detail-divide"></li>
                                         <li>제9조 성년후견개시의 심판</li>
                                         <li>제10조 피성년후견인의 행위와 취소</li>
                                         <li>제11조 성년후견종료의 심판</li>
@@ -59,6 +56,7 @@
                                         <li>제14조 한정후견종료의 심판</li>
                                         <li>제14조의2 특정후견의 심판</li>
                                         <li>제14조의3 심판 사이의 관계</li>
+                                        <li class="detail-divide"></li>
                                         <li>제15조 제한능력자의 상대방의 확답을 촉구할 권리</li>
                                         <li>제16조 제한능력자의 상대방의 철회권과 거절권</li>
                                         <li>제17조 제한능력자의 속임수</li>
@@ -1957,14 +1955,13 @@
         </li>
     </ul>
 
-
-    <script src="ul-toggle.js"></script>
+    <script src="민법-list-setting.js"></script>
+   
 </body>
 </html>
 <style>
     *   {box-sizing: border-box;}
     body{margin: 0;}
-
 
 
     .hor-ul{
@@ -1976,69 +1973,11 @@
 
 
     /* JS */
-    .pointer{ cursor: pointer;}
+
     
 </style>
-
-
 <script>
 
-
-</script>
-<script>
-
-    $(document).on('click', '.horizontal', function() {
-        
-        $(this).style(`filter: invert(1);`);
-        $('li:has(ul)').addClass(`pointer`);
-        $(`ul li`).off(`click`);
-
-
-        $(document).on('click.waitForSecond', 'ul li', function(e) {
-           
-            $(this).ff();
-            $(this).children(`ul`).addClass(`hor-ul`);
-            e.stopPropagation();
-
-            $(document).off('click.waitForSecond'); 
-            
-            $('.horizontal').removeAttr("style");
-            $('li:has(ul)').removeClass(`pointer`);
-            toggleEvent();
-            
-        });
-
-    });
-
-
-    $(document).on('click', '.vertical', function() {
-        
-        $(this).style(`filter: invert(1);`);
-        $('li:has(ul)').addClass(`pointer`);
-        $(`ul li`).off(`click`);
-
-        $(document).on('click.waitForSecond', 'ul li', function(e) {
-           
-            $(this).ff();
-            $(this).children(`ul`).removeClass(`hor-ul`);
-            e.stopPropagation();
-
-            $(document).off('click.waitForSecond'); 
-            
-            $('.vertical').removeAttr("style");
-            $('li:has(ul)').removeClass(`pointer`);
-            toggleEvent();
-            
-        });
-
-    });
-
-    $(`.top-toggle`).click(function() { $(this).toggleText(`↓`, `→`); $(`.top`).toggleClass(`hor-ul`); })
-    
-    $(`.spread`).click(function (e) { $(`ul li`).children(`ul`).slideDown(); });
-    $(`.fold`)  .click(function (e) { $(`ul li`).children(`ul`).slideUp();   });
-    $(`.reset`) .click(function (e) { $(`ul`)   .removeClass(`hor-ul`);      });
-    
 
 </script>
 

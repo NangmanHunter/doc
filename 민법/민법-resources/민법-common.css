@@ -1,0 +1,57 @@
+pre {font-family: auto;}
+body{margin: 0;}
+
+
+
+
+
+.title{text-align: center;}
+
+/* nx2 */
+.n2{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10px;
+    align-items: end;
+}
+.n2>li:nth-child(2n){
+    list-style-type: '';
+    color:#ddd;
+}
+.n2>li:nth-child(2n)>ul{
+    padding: 0;
+    list-style-type: '';
+}
+
+
+.p::marker{color:red;}
+.n::marker{color:blue;}
+
+
+/* 2xn */
+.two-n-box{
+}
+.two-n{
+    display: inline-grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
+
+    list-style: none;
+
+    gap: 3px;
+
+    margin: 30px auto;
+}
+.two-n>li{
+    padding: 10px;
+    box-shadow: 3px 3px 3px black;
+
+    background-color: black;
+    color:white;
+    font-weight: bold;
+
+    border-radius: 3px;
+
+    text-align: center;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+ 
+    <div id="clickable-area">클릭해서 하트를 확인하세요!</div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+</body>
+</html>
+<style>
+.heart{
+    position: absolute;
+
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-out {
+    opacity: 0;
+    transform: scale(1.5);
+}
+
+/* 클릭 가능한 영역 스타일 */
+#clickable-area {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+</style>
+<script>
+document.getElementById("clickable-area").addEventListener("click", function (e) {
+    // 하트 요소 생성
+    const heart = document.createElement("span");
+    heart.classList.add("heart");
+    heart.textContent = "❤️";
+    document.body.appendChild(heart);
+
+    heart.style.left = `${e.pageX}px`;
+    heart.style.top = `${e.pageY}px`;
+
+    setTimeout(() => {
+        heart.classList.add("fade-out");
+    }, 100); 
+
+    setTimeout(() => {
+        heart.remove();
+    }, 600);
+});
+</script>

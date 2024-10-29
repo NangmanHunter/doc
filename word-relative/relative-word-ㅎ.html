@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>relative-word</title>
+
+</head>
+
+<body>
+
+
+  <section class="section">
+    ㆍㅎ
+    하는 하지않는
+    하는 않는
+    할수있다 할수없다
+    해야한다 할수있다
+
+    할수있는 할수없는
+    가능한 불가능한
+    가능한 불가한
+    가능한 불능한
+    가능 불가
+    가능 불능
+    
+    &nbsp;
+    항소 부대항소
+    항소 부대항소 독립부대항소
+    통상항소 부대항소
+    통상항소 부대항소 독립부대항소
+    독립항소 종속항소
+    독립항소 종속항소 독립항소
+    &nbsp;
+    항소 일부항소
+    전부항소 일부항소
+    &nbsp;
+    허용 불허용
+    허용 불허
+    허용 불용
+    허용 허용금지
+    허용 금지
+    &nbsp;
+    형식적 실질적
+    형식상 실질상
+    절차적 실체적
+    절차상 실체상
+    절차법 실체법
+    &nbsp;
+    확정적 미확정적
+    확정적 비확정적
+    확정적 불확정적
+    확정적 유보적
+    확정적 보류적
+    확정적 모호한
+    확정적 애매한
+    &nbsp;
+    후견인 피후견인
+    피후견인 후견인
+
+
+  </section>
+
+
+  
+</body>
+
+</html>
+
+<style>
+
+
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+<script src="../resources/udf-minified.js"></script>
+<script>
+
+  $(`head`).append(
+    `<style>
+        .section p{
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 120px 50px);
+
+          margin: 0;
+        }
+        .section p>span:nth-child(even){
+          justify-self: center;
+        }
+    </style>`
+  );
+
+</script>
+
+<script>
+
+  for (let i = 0; i < $(`.section p`).length; i++) {
+
+    const arr = $($(`.section p`)[i]).html().split(` `);
+    for (let j = 0; j < arr.length; j++) {
+      arr[j] = `<span>${arr[j]}</span>`
+    }
+
+    $($(`.section p`)[i]).html(arr.join(`<span>↔</span>`))
+
+  }
+
+</script>
