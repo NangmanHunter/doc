@@ -9,3 +9,6 @@ const t  = decodeURIComponent(t_);
 
 $(`title`).text(`${t}`);
 $(`body`).prepend(`<h1 class="title">${t}</h1>`);
+
+
+$(`details`).prop("open", true);

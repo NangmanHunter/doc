@@ -1,5 +1,6 @@
 document.querySelector(`head`).insertAdjacentHTML('beforeend', `
     <link href="../resources/uds.css" rel="stylesheet"></link>
+
     <link href="민법-resources/btn-box.css" rel="stylesheet"></link>
     <link href="민법-resources/ul-toggle.css" rel="stylesheet"></link>
     <link href="민법-resources/민법-common.css" rel="stylesheet"></link>
@@ -17,9 +18,10 @@ const scriptArr=scriptSplice(`
     <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
     <script src="../resources/udf.js"></script>
     <script src="../resources/udc.js"></script>
+    
+    <script src="민법-resources/btn-box.js"></script>
     <script src="민법-resources/ul-toggle.js"></script>
     <script src="민법-resources/민법-common.js"></script>
-
 `);
 
 function loadScript(src) {
@@ -35,10 +37,10 @@ function loadScript(src) {
 (async function() {
     try {
       for(let s of scriptArr){
-        console.log(s);
+        // console.log(s);
         await loadScript(s);
       }
-      console.log('모든 스크립트 로드 완료');
+      // console.log('모든 스크립트 로드 완료');
 
     } catch (error) {
       console.error('스크립트 로드 중 오류 발생:', error);

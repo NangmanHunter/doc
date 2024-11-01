@@ -52,3 +52,18 @@ $(`.reset`) .click(function (e) { $(`ul`)   .removeClass(`hor-ul`);      });
 
 $(`.detail`).click(function() { $(this).toggleText(`▲`, `▼`); $(`.detail-divide`).toggle(); })
 
+
+
+$(`.detail-spread`).click(function(){$(`details`).prop(`open`, true);})
+$(`.detail-fold`).click(function(){$(`details`).prop(`open`, false);})
+
+let count=0;
+$(document).keyup( function(e){ 
+    if(e.ctrlKey && e.shiftKey && (e.key=='F' || e.key=='f')){ 
+        count++;
+        count%2==1 
+        ? $(`.detail-fold`).click()
+        : $(`.detail-spread`).click() 
+        ;
+    }
+})

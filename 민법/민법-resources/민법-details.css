@@ -1,0 +1,33 @@
+details{
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    font-weight: bold;
+
+    border-radius: 10px;
+    padding: 10px;
+
+}
+details>summary{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+details>summary:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: invert(1) drop-shadow(0 0 5px white);
+    font-weight: bold;
+}
+
+
+details .r{ color:crimson; }
+details .b{ color:cornflowerblue }
+details .g{color:mediumseagreen;}
+details  a{color:white; text-decoration: none;}
+
+
+
+details .focus{
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}

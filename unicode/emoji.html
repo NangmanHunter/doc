@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 data-ke-size="size26">1F300 ~ 1FAFF</h2>
+    <table class="uniTb" data-ke-align="alignLeft">
+        <tbody>
+            <tr>
+                <td style="display: none;">​</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><button class="ref"
+            style="background-color: transparent; border: none; color: #aaa; margin-top: 10px; padding-left: 0px; font-size: 10px;">Ref.</button>
+    </p>
+    <div class="opt" style="width: 980px; font-size: 0.7em;"><b>&amp;#x</b>(Html Unicode), <a
+            href="https://23log.tistory.com/81" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://23log.tistory.com/81</a><br /><b>Hex</b> &amp;#x(W3School), <a
+            href="https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://www.w3schools.com/charsets/ref_utf_misc_symbols.asp</a><br />Icons(HTML-CSS-JS),
+        <a href="https://html-css-js.com/html/character-codes/icons/" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://html-css-js.com/html/character-codes/icons/</a><br /><b>Unicode
+            Tables</b>(timwhitlock), <a href="https://apps.timwhitlock.info/emoji/tables/unicode" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://apps.timwhitlock.info/emoji/tables/unicode</a><br />Emojis(Emojiall),
+        <a href="https://www.emojiall.com/ko/all-emojis" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://www.emojiall.com/ko/all-emojis</a><br /><b>emojis Template</b>(Wiki),
+        <a href="https://en.wikipedia.org/wiki/Template:Unicode_chart_single_emojis" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://en.wikipedia.org/wiki/Template:Unicode_chart_single_emojis</a><br /><b>Unicode
+            1F000~1FFFF</b>(Wiki), <a
+            href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_1F000~1FFFF" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_1F000~1FFFF</a><br />Unicode
+        List(Wiki), <a
+            href="https://ko.wikipedia.org/wiki/%EB%B6%84%EB%A5%98:%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EB%AA%A9%EB%A1%9D"
+            target="_blank"
+            rel="noopener&nbsp;noreferrer">https://ko.wikipedia.org/wiki/%EB%B6%84%EB%A5%98:%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EB%AA%A9%EB%A1%9D</a><br />Unicode
+        Characters(Unicode), <a href="https://aac.unicode.org/choosing" target="_blank"
+            rel="noopener&nbsp;noreferrer">https://aac.unicode.org/choosing</a><br /><br /></div>
+    <p data-ke-size="size16">&nbsp;</p>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
+
+</body>
+
+</html>
+
+<script>
+
+    for (let j = 0; j < 128; j++) {
+
+
+        const row = (parseInt('30', 16) + j).toString(16).toUpperCase();
+        const tr = $('<tr>');
+        for (let i = 0; i < 16; i++) {
+            const col = Number(i).toString(16).toUpperCase();
+            const td = '<td style="display:flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 3px 3px 5px black; font-size: 30px; width:75px; height:75px; transition-duration: 0.2s">'
+                + '&#x1F'
+                + row
+                + col + ';'
+                + '<span style="font-size: 10px; font-weight:bold;">'
+                + '1F'
+                + row
+                + col
+                + '</span>' + '</td>';
+
+            tr.append(td);
+        }
+
+        $('.uniTb tbody').append(tr);
+    }
+
+    $('.uniTb tr').attr("style", "display:flex;");
+
+
+    $('.uniTb td').hover(function () {
+
+        $(this).css({
+            "backgroundColor": "rgba(255, 0, 0, 0.5)",
+            "transform": "scale(1.3) rotate(360deg)",
+            "border-radius": "100%"
+        })
+
+    }, function () {
+        $(this).css({
+            "backgroundColor": "rgba(255, 0, 0, 0.1)",
+            "transform": "scale(1)"
+        })
+    })
+
+
+
+
+
+</script>

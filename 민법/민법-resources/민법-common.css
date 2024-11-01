@@ -1,4 +1,11 @@
+p,pre{padding:10px;}
 pre {font-family: auto;}
+a{
+    text-decoration: none; 
+    color: mediumvioletred; 
+    filter: drop-shadow(0 0 5px mediumvioletred); 
+    font-weight: bold;
+}
 body{margin: 0;}
 
 
@@ -54,4 +61,12 @@ body{margin: 0;}
     border-radius: 3px;
 
     text-align: center;
+}
+
+
+.double{
+    display: inline-grid; 
+    grid-template-columns: repeat(2, auto); 
+    column-gap: 40px;
+    grid-auto-rows: min-content;
 }

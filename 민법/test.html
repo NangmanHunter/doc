@@ -7,57 +7,47 @@
 
 </head>
 <body>
-    
- 
-    <div id="clickable-area">클릭해서 하트를 확인하세요!</div>
+    &#0;
+    &#1;
+    &#2;
+    &#128512;
+    &#x1F600;
+    \x{1F600};
+    &#x00A0;
+    &#x2194;
+    ↔️
+    &#x1F468 1F3FF 200D 1F9B3;
+
+    &#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;
+    🤼🏼‍♀️
+
+    <ul>
+        <li></li>
+    </ul>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"></script>
 </body>
 </html>
 <style>
-.heart{
-    position: absolute;
+    .emoji-ul{
+        list-style-type: '';
+    }
 
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.fade-out {
-    opacity: 0;
-    transform: scale(1.5);
-}
-
-/* 클릭 가능한 영역 스타일 */
-#clickable-area {
-    width: 300px;
-    height: 200px;
-    border: 2px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px auto;
-    cursor: pointer;
-}
+    .emoji-ul>li{
+        box-shadow: 3px 3px 5px black; 
+        font-size: 30px; 
+        width:75px; 
+        height:75px;
+    }
 
 </style>
 <script>
-document.getElementById("clickable-area").addEventListener("click", function (e) {
-    // 하트 요소 생성
-    const heart = document.createElement("span");
-    heart.classList.add("heart");
-    heart.textContent = "❤️";
-    document.body.appendChild(heart);
 
-    heart.style.left = `${e.pageX}px`;
-    heart.style.top = `${e.pageY}px`;
+    const t=parseInt(`00Ax0`, 16);
+    console.log(t);
+    
+    const h=Number(11093).toString(16).toUpperCase();
+    console.log(h);
 
-    setTimeout(() => {
-        heart.classList.add("fade-out");
-    }, 100); 
-
-    setTimeout(() => {
-        heart.remove();
-    }, 600);
-});
 </script>
